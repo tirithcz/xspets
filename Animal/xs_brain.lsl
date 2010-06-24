@@ -287,13 +287,14 @@ default
                     }
                 } else
                 if (llList2String(data, 1) == "HOME_LOCATION") {
-                    home_loc = (vector)llList2String(data, 2);
+                    vector n_home_loc = (vector)llList2String(data, 2);
                     float home_dis = llList2Float(data, 3);
                     vector my_loc = llGetPos();
     //                llOwnerSay((string)llVecDist(home_loc, my_loc) + " " + (string)my_loc + (string)home_loc + (string)home_dis + llList2String(data, 2));
-                    if (llVecDist(home_loc, my_loc) <= home_dis && llFabs(llFabs(home_loc.z) - llFabs(my_loc.z)) < 1) {
+                    if (llVecDist(n_home_loc, my_loc) <= home_dis && llFabs(llFabs(n_home_loc.z) - llFabs(my_loc.z)) < 1) {
                         if (llGetOwnerKey(id) == llGetOwner()) {
-                            llMessageLinked(LINK_SET, 910, (string)home_loc + "^" + (string)home_dis, "");
+			    home_loc = n_home_loc;
+                            llMessageLinked(LINK_SET, 910, (string)n_home_loc + "^" + (string)home_dis, "");
                         }
                     }
                 } else
