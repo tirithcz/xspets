@@ -273,7 +273,6 @@ state full
         
         
         if (llDetectedKey(0) == llGetOwner()) {
-            trader_details();
             owner_touch = 1;
             integer chan = (integer)llFrand(10000.0) + 1000;
             listener = llListen(chan, "", llGetOwner(), "");
