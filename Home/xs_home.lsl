@@ -142,7 +142,7 @@ default
     state_entry()
     {
         xtea_key = xtea_key_from_string(SECRET_PASSWORD);
-        llListen(-237918, "", "", "XSPET_PING_HOME");
+        llListen(HOME_CHANNEL, "", "", "XSPET_PING_HOME");
     }
 
     touch_start(integer total_number)
